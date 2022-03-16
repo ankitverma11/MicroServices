@@ -29,6 +29,11 @@ namespace Movies.API
         {
             services.AddControllers();
 
+            services.AddSwaggerGen(c =>
+                {
+                    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Movie.API", Version = "v1" });
+                });
+
             services.AddDbContext<MoviesAPIContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("MoviesAPIContext")));
         }
