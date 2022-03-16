@@ -12,6 +12,6 @@ namespace Movies.API
 
         public string Summary { get; set; }
 
-        public string currentWeather { get; set; }
+        public string CurrentWeather { get; set; }
     }
 }
