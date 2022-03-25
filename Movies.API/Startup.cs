@@ -29,13 +29,14 @@ namespace Movies.API
         {
             services.AddControllers();
 
+            // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
                 {
                     c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Movie.API", Version = "v1" });
                 });
 
             services.AddDbContext<MoviesAPIContext>(options =>
-                    options.UseSqlite(Configuration.GetConnectionString("MoviesAPIContext")));
+                    options.UseInMemoryDatabase("Movies"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
