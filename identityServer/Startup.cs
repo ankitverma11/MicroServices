@@ -19,12 +19,12 @@ namespace identityServer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddIdentityServer()
-                .AddInMemoryClients(new List<Client>())
-                .AddInMemoryIdentityResources(new List<IdentityResource>())
-                .AddInMemoryApiResources(new List<ApiResource>())
-                .AddInMemoryApiScopes(new List<ApiScope>())
-                .AddTestUsers(new List<TestUser>())
-                .AddDeveloperSigningCredential();
+                .AddInMemoryClients(Config.clients)
+                .AddInMemoryIdentityResources(Config.identityResources)
+                .AddInMemoryApiResources(Config.apiResources)
+                .AddInMemoryApiScopes(Config.apiScopes)
+                .AddTestUsers(Config.testUsers)
+                .AddDeveloperSigningCredential();  //To provide genric certificate 
 
         }
 
