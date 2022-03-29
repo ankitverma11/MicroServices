@@ -50,6 +50,13 @@ namespace Movies.API
                 };
                 });
 
+            //Claim based auhentication with client Id claim restriction
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("clientIDPolicy", policy => policy.RequireClaim("client_id", "movieClient"));
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
