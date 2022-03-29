@@ -37,6 +37,19 @@ namespace Movies.API
 
             services.AddDbContext<MoviesAPIContext>(options =>
                     options.UseInMemoryDatabase("Movies"));
+
+            //Secure and authentcate Web Api With JWT Bearer token Authentication 
+
+            services.AddAuthentication("Bearer") //Registring JWT Authentication and incoding the bearer token options
+                .AddJwtBearer("Bearer", z =>  //this method to add support for toekn authorization
+                {
+                    z.Authority = "https://localhost:5005";
+                    z.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                    {
+                        ValidateAudience = false
+                };
+                });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,6 +74,7 @@ namespace Movies.API
             });
 
             app.UseRouting();
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
