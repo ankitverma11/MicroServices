@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Movies.API.Controllers
 {
-    [Route("api/Controller")]
+    [Route("api/[controller]")]
     [ApiController]
     [Authorize]
     public class IdentityController : ControllerBase
@@ -14,7 +14,7 @@ namespace Movies.API.Controllers
         [HttpGet]
         public IActionResult GetClaim()
         {
-            return new JsonResult(from c in User.Claims select new { c.Type, c.Value });
+            return new JsonResult(from c in User.Claims select (c.Type, c.Value));
         }
     }
 }
