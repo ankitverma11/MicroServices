@@ -19,7 +19,7 @@
     "Movies.Client": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:18829;http://localhost:43346",
+      "applicationUrl": "https://localhost:5002",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation"

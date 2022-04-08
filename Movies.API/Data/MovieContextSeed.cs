@@ -47,7 +47,7 @@ namespace Movies.API.Data
                     {
                         Id = 4,
                         Genre="BioGraphy",
-                        Title="",
+                        Title="The MS Dhoni",
                         Rating = "9.0",
                         ImageURL="image/src",
                         ReleaseDate= new DateTime(1972,12,5),

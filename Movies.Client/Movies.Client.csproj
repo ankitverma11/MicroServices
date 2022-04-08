@@ -10,6 +10,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
     <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="5.6.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="3.1.21" />
+    <PackageReference Include="IdentityModel" Version="4.5.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +21,7 @@
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
     <None Remove="Microsoft.AspNetCore.Authentication.OpenIdConnect" />
     <None Remove="Microsoft.IdentityModel.Protocols.OpenIdConnect" />
+    <None Remove="IdentityModel" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ApiServices\" />
