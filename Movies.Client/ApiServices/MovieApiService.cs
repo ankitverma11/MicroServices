@@ -10,6 +10,14 @@ namespace Movies.Client.ApiServices
 {
     public class MovieApiService : IMovieApiService
     {
+
+        private readonly IHttpClientFactory httpClientFactory;
+
+        public MovieApiService(IHttpClientFactory httpClientFactory)
+        {
+            this.httpClientFactory = httpClientFactory;
+        }
+
         public Task<Movie> CreateMovie(Movie movie)
         {
              throw new  NotImplementedException();
