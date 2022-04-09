@@ -18,7 +18,21 @@ namespace APIGatewy
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            var authenticationProviderKey = "IdentityApiKey";
+
+            services.AddAuthentication()
+                .AddJwtBearer(authenticationProviderKey, x=>
+                {
+                    x.Authority = "https://localhost:5005";
+                    x.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                    {
+                        ValidateAudience = false
+                    };
+
+                });
             services.AddOcelot();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
